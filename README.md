@@ -164,7 +164,79 @@ cp -i .env .env.wbt-backup
 nano .env
 ```
 
-`nano: command not found`가 나오면 서버 관리자에게 nano 설치를 요청하거나, 자신이 사용하는 서버 관리 패널의 파일 편집기를 이용하세요.
+`nano: command not found`가 나오면 아래의 [nano가 없을 때](#nano가-없을-때) 안내를 따라가세요.
+
+#### nano가 없을 때
+
+선택지는 세 가지입니다. 처음이라면 **방법 A: nano 설치**가 가장 쉽습니다.
+
+##### 방법 A: nano 설치하기
+
+`nano`는 작은 텍스트 편집 프로그램입니다. 아래 명령은 채팅이나 Marinara 데이터를 변경하지 않지만, 서버 운영체제에 nano 프로그램을 하나 설치합니다.
+
+먼저 서버 운영체제를 확인합니다.
+
+```bash
+cat /etc/os-release
+```
+
+출력에 `Ubuntu` 또는 `Debian`이 보이고 `root`로 접속했다면 다음 두 명령을 한 줄씩 실행합니다.
+
+```bash
+apt-get update
+apt-get install nano
+```
+
+`root`가 아닌 일반 관리자 계정이라면 다음처럼 `sudo`를 붙입니다.
+
+```bash
+sudo apt-get update
+sudo apt-get install nano
+```
+
+출력에 `Rocky`, `AlmaLinux` 또는 `Fedora`가 보이면 다음을 사용합니다.
+
+```bash
+sudo dnf install nano
+```
+
+이 운영체제에서 `root`로 접속했고 `sudo: command not found`가 나오면 `sudo`를 빼고 `dnf install nano`를 실행합니다.
+
+출력에 `Alpine`이 보이고 `root`라면 다음을 사용합니다.
+
+```bash
+apk add nano
+```
+
+설치 여부를 물으면 내용을 확인한 뒤 `y`를 입력합니다. 설치가 끝나면 다시 다음 명령을 실행합니다.
+
+```bash
+nano .env
+```
+
+운영체제 이름이 위 목록에 없거나 권한 오류가 나오면 다른 설치 명령을 추측해서 실행하지 마세요. 방법 B 또는 서버 관리 패널을 사용하세요.
+
+##### 방법 B: 기본 `vi` 편집기 사용하기
+
+서버에 `vi`가 있다면 nano를 설치하지 않고 다음처럼 열 수 있습니다.
+
+```bash
+vi .env
+```
+
+처음 사용하는 경우 다음 순서를 정확히 따르세요.
+
+1. 키보드의 `G`를 눌러 파일 맨 아래로 이동합니다.
+2. `o`를 눌러 아래에 새 줄을 만들고 입력 모드로 들어갑니다.
+3. 카탈로그 주소 한 줄을 붙여넣습니다.
+4. `Esc`를 누릅니다.
+5. `:wq`를 입력하고 `Enter`를 눌러 저장 후 종료합니다.
+
+실수해서 저장하지 않고 나가고 싶다면 `Esc`를 누른 다음 `:q!`를 입력하고 `Enter`를 누릅니다.
+
+##### 방법 C: 서버 관리 패널 사용하기
+
+Vultr 위에 별도의 서버 관리 패널을 설치해 사용 중이라면 패널의 파일 관리자에서 Marinara 폴더의 `.env`를 열 수 있습니다. 반드시 편집 전에 `.env.wbt-backup`을 만들고, 카탈로그 주소 한 줄만 추가하세요.
 
 ### 5. 카탈로그 주소 한 줄 추가하고 저장하기
 
@@ -174,11 +246,13 @@ nano .env
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
-저장 방법:
+`nano` 사용자의 저장 방법:
 
 1. `Ctrl` 키를 누른 상태에서 `O`를 누릅니다.
 2. 파일 이름이 `.env`인지 확인하고 `Enter`를 누릅니다.
 3. `Ctrl` 키를 누른 상태에서 `X`를 눌러 종료합니다.
+
+`vi` 사용자는 앞 단계의 `:wq`로 이미 저장했으므로 이 단계를 건너뜁니다.
 
 ### 6. Marinara 다시 시작하기
 
@@ -280,6 +354,8 @@ cp -i marinara.env.edit marinara.env.wbt-backup
 ```bash
 nano marinara.env.edit
 ```
+
+`nano: command not found`가 나오면 위의 [nano가 없을 때](#nano가-없을-때)를 참고하세요. `vi`를 사용한다면 `vi marinara.env.edit`로 열면 됩니다.
 
 맨 아래에 다음 한 줄을 추가합니다.
 
