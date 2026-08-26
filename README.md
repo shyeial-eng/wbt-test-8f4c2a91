@@ -60,10 +60,9 @@ Marinara Engine의 Roleplay 채팅을 위한 장면 밖 진행·생활형 세계
 
 ### 4. `.env` 편집하기
 
-`.env`를 메모장으로 열고 맨 아래에 다음 두 줄을 추가합니다.
+`.env`를 메모장으로 열고 맨 아래에 다음 한 줄을 추가합니다.
 
 ```env
-ENABLE_EXTERNAL_EXTENSIONS=true
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
@@ -137,12 +136,11 @@ nano .env
 
 `nano: command not found`가 나오면 서버 관리자에게 nano 설치를 요청하거나, 자신이 사용하는 서버 관리 패널의 파일 편집기를 이용하세요.
 
-### 5. 두 줄 추가하고 저장하기
+### 5. 카탈로그 주소 한 줄 추가하고 저장하기
 
-방향키로 파일 맨 아래로 이동한 다음 아래 두 줄을 그대로 추가합니다.
+방향키로 파일 맨 아래로 이동한 다음 아래 한 줄을 그대로 추가합니다.
 
 ```env
-ENABLE_EXTERNAL_EXTENSIONS=true
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
@@ -215,10 +213,9 @@ cp -i marinara.env.edit marinara.env.wbt-backup
 nano marinara.env.edit
 ```
 
-맨 아래에 다음 두 줄을 추가합니다.
+맨 아래에 다음 한 줄을 추가합니다.
 
 ```env
-ENABLE_EXTERNAL_EXTENSIONS=true
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
@@ -254,6 +251,14 @@ docker compose restart marinara
 
 설치가 끝나면 바로 RP를 시작하기 전에 다음 정리 단계까지 진행하세요.
 
+### 별도의 개인용 에이전트 토글이 필요한가요?
+
+필요하지 않습니다. **Settings → Advanced → Danger Zone**의 개인용 또는 커스텀 에이전트 가져오기 허용 토글은 켜지 않아도 됩니다.
+
+이 토글은 일반 에이전트 JSON 파일이나 커스텀 에이전트 저장소를 가져올 때 사용하는 기능입니다. 월드 비하인드 트래커는 **Agents → Download Agents**의 패키지 설치 방식을 사용합니다.
+
+`ENABLE_EXTERNAL_EXTENSIONS=true` 역시 이 트래커 패키지 설치만을 위한 필수 설정은 아닙니다. 다른 확장 때문에 이미 `.env`에 들어 있다면 그대로 유지해도 됩니다.
+
 ---
 
 ## 설치 후 공식 카탈로그로 되돌리기
@@ -268,11 +273,7 @@ docker compose restart marinara
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
-다음 줄은 유지합니다.
-
-```env
-ENABLE_EXTERNAL_EXTENSIONS=true
-```
+`ENABLE_EXTERNAL_EXTENSIONS=true`가 이미 들어 있다면 이 트래커 때문에 지우거나 바꿀 필요는 없습니다. 다른 확장에서 사용할 수 있으므로 그대로 두세요.
 
 ### Windows에서 삭제하기
 
