@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T12:20:13.152Z",
+  "generatedAt": "2026-08-26T13:46:33.901Z",
   "packages": [
     {
       "manifest": {
@@ -15,7 +15,7 @@
         },
         "id": "world-backstage-tracker",
         "name": "월드 비하인드 트래커",
-        "version": "0.2.3",
+        "version": "0.3.0",
         "description": "두 번의 대화마다 장면 밖 진행과 생활형 월드 정보를 기록하고 RP HUD와 Tracker Panel에 표시합니다.",
         "engine": {
           "min": "2.4.4",
@@ -38,18 +38,18 @@
         "files": [
           {
             "path": "agents.json",
-            "sha256": "3b4d4c6202b2dcc588070811ed1f4cb976f5d980c08bbcdd2c2daec9e3fa7c6e",
-            "bytes": 2811
+            "sha256": "11df3abec27aedbe2b0de9909a14712967a157d90eb2fb97c95223bf9bbb7ce1",
+            "bytes": 4270
           },
           {
             "path": "server.mjs",
-            "sha256": "318868132bb7498cec61344ebe40d4f9f5637f6f757ac711a33e78754a40ef23",
-            "bytes": 5764
+            "sha256": "5035dc88fedab1a79b4b28261785f3f027a01c5902575654c5ae7bcc354f16d6",
+            "bytes": 7778
           },
           {
             "path": "client.js",
-            "sha256": "f43ee7757f24dee9744e5f75a722ca85e1bfe7b73a9dcbb4ea9d515533e03d53",
-            "bytes": 9568
+            "sha256": "d319ab63cff9fe41969628006520deea08bf82316fe2bc38b31cae63b8c937d9",
+            "bytes": 10416
           }
         ],
         "permissions": [
@@ -63,9 +63,9 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.2.3.zip",
-        "sha256": "da24270ea8d556406acf787ee17db245be7e2e57b21aefdeeea8743caa05b480",
-        "bytes": 7733
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.3.0.zip",
+        "sha256": "da18f9421a74b4d6bbd8606118a1df05df7cbab7ad6eb8d4e06240add9a33cec",
+        "bytes": 9204
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
