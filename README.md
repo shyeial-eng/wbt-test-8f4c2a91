@@ -27,6 +27,35 @@ Marinara Engine의 Roleplay 채팅을 위한 장면 밖 진행·생활형 세계
 4. 가능하면 설치 전에 Marinara 백업을 만들어 주세요.
 5. `.env`는 Marinara의 설정 파일입니다. 채팅과 캐릭터가 들어 있는 파일은 아니지만, 잘못 편집하면 서버가 정상적으로 열리지 않을 수 있습니다.
 6. **설치 후 `.env` 파일 전체를 삭제하면 안 됩니다. 안내된 카탈로그 주소 한 줄만 삭제합니다.**
+7. **PM2로 Marinara를 실행하는 서버에서는 Marinara 화면의 서버 재시작 버튼을 누르지 마세요.** PM2와 앱 내부 재시작이 동시에 실행되면 중복 서버와 재시작 반복이 발생할 수 있습니다.
+
+### 🚨 PM2 서버 필수 경고
+
+Vultr 서버에서 PM2를 사용한다면 설치, 업데이트, `.env` 변경 뒤의 모든 재시작은 SSH에서 PM2로만 진행하세요.
+
+먼저 PM2가 Marinara를 관리하는지 확인합니다.
+
+```bash
+pm2 list
+```
+
+목록에 `marinara`가 있다면 다음 명령을 사용합니다.
+
+```bash
+pm2 restart marinara
+pm2 status
+```
+
+PM2 목록의 이름이 `marinara`가 아니라면 실제 표시된 이름을 사용해야 합니다. 확실하지 않으면 재시작하지 말고 서버 관리자에게 확인하세요.
+
+PM2 사용자는 다음 행동을 하면 안 됩니다.
+
+- Marinara의 **Settings → Advanced → Server Restart** 버튼 누르기
+- PM2가 실행 중인데 별도로 `./start.sh` 다시 실행하기
+- 같은 서버를 여러 터미널에서 중복 실행하기
+- 원인을 모르는 상태에서 `pm2 restart all` 사용하기
+
+재시작 후 `pm2 status`의 재시작 횟수가 빠르게 계속 증가하면 정상 상태가 아닙니다. 같은 재시작 명령을 반복하지 말고 즉시 중단한 뒤 서버 관리자에게 도움을 요청하세요.
 
 ## 가장 먼저: 내 설치 방식 확인하기
 
@@ -34,6 +63,7 @@ Marinara Engine의 Roleplay 채팅을 위한 장면 밖 진행·생활형 세계
 
 - Windows PC에서 `MarinaraLauncher.exe` 또는 `start.bat`로 실행한다 → [Windows 설치](#windows-pc-설치)
 - Vultr 서버에 SSH로 접속하고 `start.sh`로 실행한다 → [Vultr 일반 설치](#vultr-일반-설치-ssh--startsh)
+- Vultr 서버에서 PM2를 사용한다 → [PM2로 안전하게 재시작](#pm2로-안전하게-재시작하기)
 - Vultr 서버에서 Docker Compose를 사용한다 → [Vultr Docker 설치](#vultr-docker-설치-ssh--docker-compose)
 
 `SSR`이 아니라 **SSH**입니다. SSH는 내 컴퓨터에서 Vultr 서버의 명령 화면에 안전하게 접속하는 방법입니다.
@@ -152,15 +182,53 @@ MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-tes
 
 ### 6. Marinara 다시 시작하기
 
-현재 터미널에서 Marinara가 실행 중이라면 `Ctrl+C`로 안전하게 중지한 뒤 다음 명령으로 다시 실행합니다.
+먼저 PM2 사용 여부를 확인합니다.
+
+```bash
+pm2 list
+```
+
+목록에 Marinara가 있다면 `./start.sh`를 실행하지 말고 아래의 [PM2로 안전하게 재시작하기](#pm2로-안전하게-재시작하기)를 따르세요.
+
+PM2를 사용하지 않고 현재 터미널에서 `start.sh`로 Marinara를 실행 중인 경우에만 `Ctrl+C`로 안전하게 중지한 뒤 다음 명령으로 다시 실행합니다.
 
 ```bash
 ./start.sh
 ```
 
-`systemd`, `pm2`, 서버 관리 패널 등으로 실행하고 있다면 그 관리 방법으로 Marinara만 재시작하세요. 실행 방식을 모르는 상태에서 서버 전체를 재부팅하거나 다른 서비스를 중지하지 마세요.
+`systemd`나 서버 관리 패널로 실행하고 있다면 해당 관리 방법으로 Marinara만 재시작하세요. 실행 방식을 모르는 상태에서 서버 전체를 재부팅하거나 다른 서비스를 중지하지 마세요.
 
 이제 [앱에서 트래커 설치하기](#앱에서-트래커-설치하기)로 이동하세요.
+
+---
+
+## PM2로 안전하게 재시작하기
+
+이 부분은 `pm2 list`에 Marinara가 표시되는 Vultr 서버용입니다.
+
+### 1. 현재 상태 확인
+
+```bash
+pm2 list
+```
+
+Marinara 프로세스의 이름과 현재 상태를 확인합니다. 아래 예시는 프로세스 이름이 `marinara`인 경우입니다.
+
+### 2. PM2에서 한 번만 재시작
+
+```bash
+pm2 restart marinara
+```
+
+### 3. 정상 상태 확인
+
+```bash
+pm2 status
+```
+
+`marinara`가 `online`으로 표시되어야 합니다. 재시작 횟수가 짧은 시간 동안 계속 증가하거나 상태가 `errored`와 `restarting`을 반복하면 추가 재시작을 멈추세요.
+
+> PM2 서버에서는 Marinara 화면의 서버 재시작 버튼을 누르지 마세요. 앱 내부 재시작과 PM2 재시작이 충돌하면 같은 포트를 차지하려는 중복 서버가 생길 수 있습니다.
 
 ---
 
@@ -247,7 +315,27 @@ docker compose restart marinara
 4. 설명, 버전, 권한을 확인합니다.
 5. **Install**을 누릅니다.
 6. 설치 완료 메시지가 나타나는지 확인합니다.
-7. 안내에 따라 Marinara 서버를 한 번 재시작합니다.
+7. 설치가 끝나면 자신의 실행 방식으로 Marinara 서버를 한 번 재시작합니다.
+
+### PM2 사용자는 여기서 잠깐 멈추세요
+
+PM2 사용자는 설치 완료 직후 앱의 재시작 버튼을 누르지 마세요. 아직 `pm2 restart`도 실행하지 말고 다음 순서로 진행하면 재시작을 한 번으로 줄일 수 있습니다.
+
+1. SSH에서 `.env`를 엽니다.
+2. `MARINARA_AGENT_CATALOG_URL=`로 시작하는 한 줄만 삭제하고 저장합니다.
+3. `pm2 restart marinara`를 한 번만 실행합니다.
+4. `pm2 status`에서 `online`인지 확인합니다.
+
+이 한 번의 PM2 재시작으로 새 트래커 활성화와 공식 카탈로그 복귀가 함께 적용됩니다.
+
+재시작 방법:
+
+- Windows: Marinara를 완전히 종료한 뒤 다시 실행
+- 일반 `start.sh`: 실행 중인 터미널에서 `Ctrl+C` 후 `./start.sh`
+- PM2: SSH에서 `pm2 restart marinara`
+- Docker Compose: SSH에서 `docker compose restart marinara`
+
+**PM2 사용자는 설치 완료 화면이나 Settings의 서버 재시작 버튼을 누르지 마세요.**
 
 설치가 끝나면 바로 RP를 시작하기 전에 다음 정리 단계까지 진행하세요.
 
@@ -290,7 +378,15 @@ cd ~/Marinara-Engine
 nano .env
 ```
 
-`MARINARA_AGENT_CATALOG_URL=`로 시작하는 한 줄 전체를 지웁니다. `Ctrl+O`, `Enter`, `Ctrl+X`로 저장하고 Marinara를 재시작합니다.
+`MARINARA_AGENT_CATALOG_URL=`로 시작하는 한 줄 전체를 지웁니다. `Ctrl+O`, `Enter`, `Ctrl+X`로 저장합니다.
+
+- PM2가 아니라면 원래 사용하던 방식으로 Marinara를 재시작합니다.
+- PM2를 사용한다면 앱의 재시작 버튼 대신 SSH에서 다음 명령을 사용합니다.
+
+```bash
+pm2 restart marinara
+pm2 status
+```
 
 ### Vultr Docker 설치에서 삭제하기
 
@@ -334,7 +430,7 @@ UI가 보이더라도 해당 채팅방에 에이전트가 추가되지 않았다
 MARINARA_AGENT_CATALOG_URL=https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/catalog/v2/catalog.json
 ```
 
-Marinara를 재시작한 뒤 **Agents → Download Agents**에서 업데이트합니다. 업데이트가 끝나면 같은 줄을 다시 제거하고 재시작하면 공식 카탈로그로 돌아갑니다.
+자신의 실행 방식으로 Marinara를 재시작한 뒤 **Agents → Download Agents**에서 업데이트합니다. 업데이트가 끝나면 같은 줄을 다시 제거하고 같은 방식으로 재시작하면 공식 카탈로그로 돌아갑니다. PM2 서버에서는 앱의 재시작 버튼이 아니라 `pm2 restart marinara`를 사용하세요.
 
 ## 문제가 생겼을 때
 
@@ -344,7 +440,7 @@ Marinara를 재시작한 뒤 **Agents → Download Agents**에서 업데이트�
 - 주소가 한 줄로 입력되어 있는지 확인하세요.
 - Marinara Engine 버전이 2.4.4인지 확인하세요.
 - 서버가 GitHub의 `raw.githubusercontent.com`에 접속할 수 있어야 합니다.
-- `.env` 변경 후 Marinara를 재시작해 보세요.
+- `.env` 변경 후 자신의 실행 방식으로 Marinara를 재시작해 보세요. PM2 서버에서는 `pm2 restart marinara`만 사용하세요.
 
 ### 설치했지만 UI가 보이지 않아요
 
@@ -358,6 +454,13 @@ Marinara를 재시작한 뒤 **Agents → Download Agents**에서 업데이트�
 - 월드 비하인드 트래커가 해당 채팅방에서 활성화되어 있는지 확인하세요.
 - 에이전트가 사용할 AI 연결과 모델이 정상인지 확인하세요.
 - 자동 실행 간격이 있으므로 RP를 조금 더 진행한 뒤 확인하세요.
+
+### PM2 재시작 횟수가 계속 증가해요
+
+- 정상 상태가 아니므로 Marinara 화면의 재시작 버튼과 추가 재시작 명령 사용을 멈추세요.
+- 같은 포트에서 PM2 외부의 Marinara가 중복 실행 중일 수 있습니다.
+- `pm2 status` 화면을 서버 관리자에게 보여주고 중복 프로세스와 포트 점유 상태를 점검받으세요.
+- 에이전트 파일이나 채팅 데이터를 먼저 삭제하지 마세요. 이 현상은 에이전트 연산보다 프로세스 관리 충돌일 가능성이 큽니다.
 
 ### `.env`를 잘못 편집했어요
 
