@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T10:17:15.041Z",
+  "generatedAt": "2026-08-26T12:20:13.152Z",
   "packages": [
     {
       "manifest": {
@@ -15,7 +15,7 @@
         },
         "id": "world-backstage-tracker",
         "name": "월드 비하인드 트래커",
-        "version": "0.2.2",
+        "version": "0.2.3",
         "description": "두 번의 대화마다 장면 밖 진행과 생활형 월드 정보를 기록하고 RP HUD와 Tracker Panel에 표시합니다.",
         "engine": {
           "min": "2.4.4",
@@ -48,8 +48,8 @@
           },
           {
             "path": "client.js",
-            "sha256": "000d0749f279b06418937f3886aa3be65ab8b8ce767eedc15482728f01214bed",
-            "bytes": 8020
+            "sha256": "f43ee7757f24dee9744e5f75a722ca85e1bfe7b73a9dcbb4ea9d515533e03d53",
+            "bytes": 9568
           }
         ],
         "permissions": [
@@ -63,9 +63,9 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.2.2.zip",
-        "sha256": "83207a8a944902d3fec2b99ce0e6120b8577f691eaaa36821e2159d253b9564e",
-        "bytes": 7405
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.2.3.zip",
+        "sha256": "da24270ea8d556406acf787ee17db245be7e2e57b21aefdeeea8743caa05b480",
+        "bytes": 7733
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
