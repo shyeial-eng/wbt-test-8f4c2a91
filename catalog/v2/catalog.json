@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T10:57:00.557Z",
+  "generatedAt": "2026-08-28T14:34:49.063Z",
   "packages": [
     {
       "manifest": {
@@ -82,7 +82,7 @@
         },
         "id": "world-backstage-quest-engine",
         "name": "WBT RP 퀘스트 엔진",
-        "version": "0.4.2",
+        "version": "0.4.3",
         "description": "RP 사건을 퀘스트, 기회, 비밀 퀘스트, 이벤트와 후일담으로 안전하게 관리합니다.",
         "engine": {
           "min": "2.4.4",
@@ -110,8 +110,8 @@
           },
           {
             "path": "client.js",
-            "sha256": "31f8b2d880b5fa4ef5f00b535cf7050cea7c2c250cadb5633ceec856bddff28f",
-            "bytes": 10528
+            "sha256": "211f30ec7c1a43fbaf90672b2a6f28e2f05b5759717332a0c93080bb70b90a84",
+            "bytes": 10540
           },
           {
             "path": "domain/quest-domain.mjs",
@@ -190,11 +190,12 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-quest-engine-0.4.2.zip",
-        "sha256": "d3ef881adc34c909a9992f44294d0ce8ec1bd3a1406ca81859458befd79f1ad5",
-        "bytes": 34317
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-quest-engine-0.4.3.zip",
+        "sha256": "17d5917dc1d918a702d399926397248c6fe0204a8d0716be65f2a6ff8d5fa66c",
+        "bytes": 34314
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
   ]
 }
+
