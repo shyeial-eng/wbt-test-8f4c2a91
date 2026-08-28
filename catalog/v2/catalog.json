@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-26T13:46:33.901Z",
+  "generatedAt": "2026-08-28T08:35:00.000Z",
   "packages": [
     {
       "manifest": {
@@ -66,6 +66,133 @@
         "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.3.0.zip",
         "sha256": "da18f9421a74b4d6bbd8606118a1df05df7cbab7ad6eb8d4e06240add9a33cec",
         "bytes": 9204
+      },
+      "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
+    },
+    {
+      "manifest": {
+        "schemaVersion": 2,
+        "capabilityApi": {
+          "major": 1,
+          "minor": 14
+        },
+        "builtAgainst": {
+          "engineVersion": "2.4.4",
+          "engineCommit": "1a299369ac7025028c3ce1b80cc59f47b7b0691b"
+        },
+        "id": "world-backstage-quest-engine",
+        "name": "WBT RP 퀘스트 엔진",
+        "version": "0.4.0",
+        "description": "RP 사건을 퀘스트, 기회, 비밀 퀘스트, 이벤트와 후일담으로 안전하게 관리합니다.",
+        "engine": {
+          "min": "2.4.4",
+          "maxExclusive": "2.5.0"
+        },
+        "kind": [
+          "agent"
+        ],
+        "entrypoints": {
+          "agents": "agents.json",
+          "server": "server.mjs",
+          "client": "client.js"
+        },
+        "contributions": {
+          "slots": [
+            "roleplay-tracker",
+            "tracker-panel"
+          ]
+        },
+        "files": [
+          {
+            "path": "agents.json",
+            "sha256": "507afd7095a1c44b3355992dc176d867adf864771e13b3f7c16b3348aaf8d3aa",
+            "bytes": 2330
+          },
+          {
+            "path": "client.js",
+            "sha256": "53cd24ad0a3ebd7641c5566a331e6a4b4e457db3111543170cdec0bfb0a0f25d",
+            "bytes": 10504
+          },
+          {
+            "path": "domain/quest-domain.mjs",
+            "sha256": "7f53a1aedf7ed170a5292f8a8f6f8e467922b3f3af60084e76f3bd9274325d99",
+            "bytes": 9412
+          },
+          {
+            "path": "features/quest-lifecycle.mjs",
+            "sha256": "6ec007683656a3a59364d0e718050ee6f9e77a24390cfb78da6ce4c561ab69ba",
+            "bytes": 8463
+          },
+          {
+            "path": "integration/quest-tracker-bridge.mjs",
+            "sha256": "d4ebb2b4004499da2ac974ca72b339d34b7398bc1843e11ca5058932a8b0c453",
+            "bytes": 4237
+          },
+          {
+            "path": "integration/rp-context-adapter.mjs",
+            "sha256": "3b42aedf7bf35c407988e3d0a1f83def1534643107eb85918c3f5e9cf52c5acd",
+            "bytes": 6176
+          },
+          {
+            "path": "persistence/quest-state-store.mjs",
+            "sha256": "94bea483256f4276860ac0090b0c29c27a29ce39ec3de0f103f9377b33277837",
+            "bytes": 2645
+          },
+          {
+            "path": "persistence/quest-state.mjs",
+            "sha256": "0ef8b46f9f1ee766c91830b167770b0513e081bf9d330e026910484b5acee597",
+            "bytes": 8714
+          },
+          {
+            "path": "runtime/quest-runtime.mjs",
+            "sha256": "09cfcc9f241bbb87a41b0b8458f617d17fa27e64830d5ea7464cba4c90e8497f",
+            "bytes": 8482
+          },
+          {
+            "path": "server.mjs",
+            "sha256": "d93b24c4819242fc3649a0dcf1810e7ba36f3fcc4f0aec3c5607c23a2e4db595",
+            "bytes": 12342
+          },
+          {
+            "path": "themes/built-in-packs.mjs",
+            "sha256": "00ac2340741ce05dae40491a659deab66547c598b8c144443f3638cbf94e440f",
+            "bytes": 2415
+          },
+          {
+            "path": "themes/farm-v1.mjs",
+            "sha256": "63799b451ca20c6f329ab98aca546681c2b0e6bfcf58bd9ce0a256f0befe092d",
+            "bytes": 4728
+          },
+          {
+            "path": "themes/high-school-v1.mjs",
+            "sha256": "16ce0d3e20705a5a7c83a90cf74226defb5be7c73caab690f2f810bfea10ac61",
+            "bytes": 5061
+          },
+          {
+            "path": "themes/theme-registry.mjs",
+            "sha256": "f84a421022a2dfefe2dec8f1440eac27022dc7c44e50e328ed73e5fb526ec8ea",
+            "bytes": 4288
+          },
+          {
+            "path": "ui/quest-view-model.mjs",
+            "sha256": "b7a0ace7917074284bad0e0a57231ddcd4e588986681e9e631fe3c3aa106e3df",
+            "bytes": 3153
+          }
+        ],
+        "permissions": [
+          "agent-runtime",
+          "chat-read",
+          "routes",
+          "storage",
+          "ui"
+        ],
+        "restartRequired": true
+      },
+      "category": "tracker",
+      "artifact": {
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-quest-engine-0.4.0.zip",
+        "sha256": "6ab568fa3dfaff2eb77c671253243a53767794a9f379165df80dd4de40a7d6ba",
+        "bytes": 34296
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
