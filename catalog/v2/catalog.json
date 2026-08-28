@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-28T14:34:49.063Z",
+  "generatedAt": "2026-08-28T15:32:33.678Z",
   "packages": [
     {
       "manifest": {
@@ -82,7 +82,7 @@
         },
         "id": "world-backstage-quest-engine",
         "name": "WBT RP 퀘스트 엔진",
-        "version": "0.4.3",
+        "version": "0.4.4",
         "description": "RP 사건을 퀘스트, 기회, 비밀 퀘스트, 이벤트와 후일담으로 안전하게 관리합니다.",
         "engine": {
           "min": "2.4.4",
@@ -110,8 +110,8 @@
           },
           {
             "path": "client.js",
-            "sha256": "211f30ec7c1a43fbaf90672b2a6f28e2f05b5759717332a0c93080bb70b90a84",
-            "bytes": 10540
+            "sha256": "93a87e6726a55eb52c7dc97786332df752173532e206b1a42ee89cd83b0374c6",
+            "bytes": 12874
           },
           {
             "path": "domain/quest-domain.mjs",
@@ -150,8 +150,8 @@
           },
           {
             "path": "server.mjs",
-            "sha256": "a36a655eb9f10df341bd829b725035c21174a93e7cfa4e750f247d0c9901f4a4",
-            "bytes": 12339
+            "sha256": "8406d693011eed9ba62826a3646dff1cc0c722d1166c0a70d448915c013ef018",
+            "bytes": 12664
           },
           {
             "path": "themes/built-in-packs.mjs",
@@ -175,8 +175,8 @@
           },
           {
             "path": "ui/quest-view-model.mjs",
-            "sha256": "b7a0ace7917074284bad0e0a57231ddcd4e588986681e9e631fe3c3aa106e3df",
-            "bytes": 3153
+            "sha256": "1df270dd3caf22878c4f045131056493f45925794e571ce06ffff25432c4e52f",
+            "bytes": 3361
           }
         ],
         "permissions": [
@@ -190,9 +190,9 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-quest-engine-0.4.3.zip",
-        "sha256": "17d5917dc1d918a702d399926397248c6fe0204a8d0716be65f2a6ff8d5fa66c",
-        "bytes": 34314
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-quest-engine-0.4.4.zip",
+        "sha256": "23486a0c2c21bd366a60474e6c1111075cbf89fd1d294f4d0b17465dd00dd537",
+        "bytes": 35151
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
