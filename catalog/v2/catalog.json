@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T05:28:34.564Z",
+  "generatedAt": "2026-08-30T07:38:12.548Z",
   "packages": [
     {
       "manifest": {
@@ -15,8 +15,8 @@
         },
         "id": "world-backstage-tracker",
         "name": "월드 비하인드 트래커",
-        "version": "0.3.1",
-        "description": "장면 밖 진행과 생활형 월드 정보를 기록하고 최근 5회 사건 타임라인으로 연속성을 유지합니다.",
+        "version": "0.4.0",
+        "description": "장면 밖 진행과 월드 정보를 기록하고, 사용자가 선택한 사건을 활성 서사로 메인 RP에 전달합니다.",
         "engine": {
           "min": "2.4.4",
           "maxExclusive": "2.5.0"
@@ -43,18 +43,19 @@
           },
           {
             "path": "server.mjs",
-            "sha256": "54c59c213a6515e61b3e315e376075a0594820954b099cef35ac3d53146ea243",
-            "bytes": 9875
+            "sha256": "eae8b1204a277c6b5542d506780049e2f1cf35bbb07908d136b471f285157ea0",
+            "bytes": 14958
           },
           {
             "path": "client.js",
-            "sha256": "9fcd2f74ef8a654a227bffaceeb9ca229cea11ef10ea84d2cc27699d1718c597",
-            "bytes": 11041
+            "sha256": "e8465a98bc302314f1eb584c473e40f870abc66280209b82c384325354179da2",
+            "bytes": 18236
           }
         ],
         "permissions": [
           "agent-runtime",
           "chat-read",
+          "prompt-context",
           "routes",
           "storage",
           "ui"
@@ -63,9 +64,9 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.3.1.zip",
-        "sha256": "b2f3b17669fb798bb9b2494cf3f4cf730bd358e9cc23d73c65c91e9c193a116a",
-        "bytes": 10316
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.4.0.zip",
+        "sha256": "5a159175afda018569dcb09aaef470bd4eadcb4e2c8fa9a97213dce70c0823d8",
+        "bytes": 13262
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
