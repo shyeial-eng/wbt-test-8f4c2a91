@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T07:38:12.548Z",
+  "generatedAt": "2026-08-30T07:46:54.286Z",
   "packages": [
     {
       "manifest": {
@@ -48,8 +48,8 @@
           },
           {
             "path": "client.js",
-            "sha256": "e8465a98bc302314f1eb584c473e40f870abc66280209b82c384325354179da2",
-            "bytes": 18236
+            "sha256": "9ce323a36653de4783628e999cbcd60b0309058ed8277021237000f762fec6b2",
+            "bytes": 23995
           }
         ],
         "permissions": [
@@ -65,8 +65,8 @@
       "category": "tracker",
       "artifact": {
         "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.4.0.zip",
-        "sha256": "5a159175afda018569dcb09aaef470bd4eadcb4e2c8fa9a97213dce70c0823d8",
-        "bytes": 13262
+        "sha256": "e3762c2eda405d33ff848d08b7c726e33a1a1071c3363cb50a1374414cc510db",
+        "bytes": 14475
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
