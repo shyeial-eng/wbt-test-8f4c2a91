@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-30T08:41:55.868Z",
+  "generatedAt": "2026-08-30T19:18:54.302Z",
   "packages": [
     {
       "manifest": {
@@ -15,7 +15,7 @@
         },
         "id": "world-backstage-tracker",
         "name": "월드 비하인드 트래커",
-        "version": "0.4.1",
+        "version": "0.4.2",
         "description": "장면 밖 진행과 월드 정보를 기록하고, 사용자가 선택한 사건을 활성 서사로 메인 RP에 전달합니다.",
         "engine": {
           "min": "2.4.4",
@@ -38,17 +38,17 @@
         "files": [
           {
             "path": "agents.json",
-            "sha256": "6da4e217d5709064eecec37e85412b7f2a8b4a9512c85cbcb8ec160fac6d999d",
-            "bytes": 4915
+            "sha256": "8ba47b16da4881f026f89cf4f1b4bfe102e2982064c9dcf7c124931efb058da0",
+            "bytes": 4936
           },
           {
             "path": "server.mjs",
-            "sha256": "eae8b1204a277c6b5542d506780049e2f1cf35bbb07908d136b471f285157ea0",
-            "bytes": 14958
+            "sha256": "e4a1975460be6fa098dcd4cef7dba489dad2577d1302ab474458ec65548f9123",
+            "bytes": 15756
           },
           {
             "path": "client.js",
-            "sha256": "9ce323a36653de4783628e999cbcd60b0309058ed8277021237000f762fec6b2",
+            "sha256": "c17c7b8db7a278a4ec2dc5e0e5405be1af13bd55b8178f44dc41392dd2e4f0b1",
             "bytes": 23995
           }
         ],
@@ -64,9 +64,9 @@
       },
       "category": "tracker",
       "artifact": {
-        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.4.1.zip",
-        "sha256": "8ea918b0107d1acfaf0c722f0e9d1e8eee21a3a742e904f8010fad6230f19895",
-        "bytes": 14475
+        "url": "https://raw.githubusercontent.com/shyeial-eng/wbt-test-8f4c2a91/main/artifacts/world-backstage-tracker-0.4.2.zip",
+        "sha256": "03e1e3f72b51f46b6dacebd59c931a9062f1a18be371d26b057af2b610c692b1",
+        "bytes": 14719
       },
       "documentationUrl": "https://github.com/shyeial-eng/wbt-test-8f4c2a91/blob/main/README.md"
     }
